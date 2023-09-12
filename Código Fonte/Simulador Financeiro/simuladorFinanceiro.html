@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="titulo">
+    
+    <img src="logo.jpg" class="img">
+    </div>
+
+    <div class="escopo" id="input_div">
+        <div>
+            <h1>SIMULADOR</h1>
+            <h3>Utilize nossa calculadora para estimar suas perdas de alimentos! </h3>
+            <span>Qual fruta você vende?</span><br>
+            <input id="input_fruta"><br><BR>
+
+            <span>Qual é a quantidade de toneladas vendidas ao ano?</span><br>
+            <input id="input_carga_transportada" type="number"><br><BR>
+
+            <span>Qual é o faturamento anual?</span><br>
+            <input id="input_faturamento_anual" type="number"><br><BR>
+
+            <span>Quantidade da sua frota de caminhões?</span>
+            <input type="number" id="input_frota"><br><BR>
+
+            <span>Qual o tamanho dos baus da sua frota (metros)?</span>
+            <input type="number" id="input_tamanho_bau"><br><br>
+
+        </div>
+        <button class="btn-simular" onclick="Calcular()">Simular</button>
+    </div>
+
+    <div id="div_calculo"></div>
+</body>
+
+</html>
+
+<script>
+    function Calcular() {
+        var fruta = (input_fruta.value);
+
+        //calculo perda carga
+
+        var cargaAnual = Number(input_carga_transportada.value);
+    var perdaCargaTotal = cargaAnual * 0.3;
+    var perdaCargaTransporte = perdaCargaTotal * 0.5;
+
+        // calculo para frota
+        var frota = Number(input_frota.value);
+        var tamanho_bau = Number(input_tamanho_bau.value);
+        var valor_sensor = 80
+        var qnt_sensores = 0
+
+        //calculo perda faturamento
+
+        var faturamentoAnual = Number(input_faturamento_anual.value);
+        var perdaFatTotal = faturamentoAnual * 0.3;
+        var perdaFatTransporte = perdaFatTotal * 0.5;
+
+        //calculo para valor restaurado
+        
+        var perdaFatTransporte2 = perdaFatTransporte * 0.3; // As perdas serão reduzidas para até 30%
+        var valorRestaurado = perdaFatTransporte - perdaFatTransporte2;
+
+        // Oculta o div anterior
+        document.getElementById('input_div').style.display = 'none';
+
+        if (tamanho_bau < 12) {
+            qnt_sensores = 2
+        }
+        if (tamanho_bau >= 12) {
+            qnt_sensores = 4
+        }
+
+        if (tamanho_bau >= 20) {
+            qnt_sensores = 5
+        }
+
+        if (tamanho_bau >= 30) {
+            qnt_sensores = 6
+        }
+
+        var valor_frota = frota * (qnt_sensores * valor_sensor)
+
+        //calculo ROI
+
+        var retornoTotal = perdaFatTransporte2 * 2;
+        var investimentoProjeto = 40000 + valor_frota;
+        var roi = ((retornoTotal - investimentoProjeto) / investimentoProjeto) * 100;
+
+        //exibir mensagem
+
+        div_calculo.innerHTML = `
+        <div class="div_resultado">
+            <h2>RESULTADO</h2>
+        <b>Fruta:</b> ${fruta}<br>
+        <b>Faturamento Anual:</b> R$ ${faturamentoAnual}<br>
+        <b>Carga anual transportada:</b> ${cargaAnual} t<br>
+        <b>Perda da carga total (30%):</b> ${perdaCargaTotal} t<br> 
+        <b>Perda da carga durante o transporte (50% das perdas totais):</b> ${perdaCargaTransporte} t<br>
+        <b>Perda total (30%):</b> R$ ${perdaFatTotal}<br>
+        <b>Valor da perda apenas em transporte (50% das perdas totais):</b> R$ ${perdaFatTransporte}<br><br>
+        
+        <i>Iremos restaurar <b>até 30% (R$${perdaFatTransporte2})</b> dos <b>R$${perdaFatTransporte}</b> perdidos no seu faturamento durante o transporte. Ou seja, depois da implementação do sistema, as suas perdas do transporte cairão para <b>R$${valorRestaurado}</b>.<br><br>
+        
+        Com nossa solução, você verá um ROI de <b>${roi.toFixed(2)}%</b> em apenas <b>2 anos</b>!
+        Resultando em um ganho financeiro de <b>R$${retornoTotal }.</b><br><br>
+        
+        Além disso, o valor final do projeto está previsto para ser de <b>R$ ${investimentoProjeto}.</b><br><br>
+
+        Não perca esta oportunidade de maximizar seus lucros e transformar seu negócio.<br><br>
+
+        <button class="btn-simular">Contratar agora!</button>
+        </div>
+        `;
+
+    }
+</script>

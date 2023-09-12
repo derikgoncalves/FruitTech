@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Poppins:wght@300;400;500;600&family=Sora:wght@200;500&display=swap');
+
+*{
+  font-family: "Sora";
+}
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+
+.titulo {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.titulo > h1{
+  font-size: 50px;
+}
+
+img {
+  width: 400px;
+  height: 120px;
+}
+
+span {
+  font-size: 18px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+.escopo {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fafae78d;
+  border-radius: 10px;
+  box-shadow: 2px 5px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* box-shadow: 5px 4px 10px #7cbd43; */
+}
+
+.btn-simular {
+  display: block;
+  width: 100%;
+  background-color: #7cbd43;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.div_resultado {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 30px;
+  background-color: #fafae78d;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-size: 17px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input{
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #7b7b7812;
+  font-size: 12pt;
+  outline: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h1{
+  color: #D56B1D;
+}
+
+h2{
+  color: #D56B1D;
+}
+
+span {
+  color: #000000;
+  font-family: "Sora";
+  font-size: 16px;
+}
