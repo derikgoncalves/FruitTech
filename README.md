@@ -1,8 +1,14 @@
-# SPTech | Repositório FruitTech - SPRINT 2 - Projeto de Pesquisa &amp; Inovação.
+# SPTech | Repositório FruitTech
 - Este repositório foi criado para armazenar o projeto desenvolvido pelos integrantes do nosso grupo na faculdade.
 
-# Regras de Condução, projeto FruitTech.
+  
+# Estrutura do repositório.
+- <b>README.md:</b> Este arquivo contém informações detalhadas sobre o projeto, descrição, funcionalidades, tecnologias & informação relevantes.
 
+- <b>Código fonte:</b> Esta pasta contém o código fonte do projeto, organizado em diretórios e arquivos apropriados.
+
+
+# Regras de Condução, projeto FruitTech.
 · Scrum Master (Guilherme Neves) / PO (Isaac Souza)
 
 · Caso alguém tenha alguma dificuldade de comparecimento na reunião semanal, entre em contato com o Scrum Master para ajustes.
@@ -21,8 +27,3 @@
 · Reuniões às 20:00 (Segunda, Quarta e Sexta).
 
 
-# Estrutura do repositório.
-
-- <b>README.md:</b> Este arquivo contém informações detalhadas sobre o projeto, descrição, funcionalidades, tecnologias & informação relevantes.
-
-- <b>Código fonte:</b> Esta pasta contém o código fonte do projeto, organizado em diretórios e arquivos apropriados.
