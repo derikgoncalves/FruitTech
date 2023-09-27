@@ -1,4 +1,4 @@
-# SPTech | Repositório FruitTech
+# SPTech | Repositório FruitTech.
 - Este repositório foi criado para armazenar o projeto desenvolvido pelos integrantes do nosso grupo na faculdade.
 
   
