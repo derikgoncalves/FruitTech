@@ -89,5 +89,7 @@ CREATE TABLE sensorDados (
   id_sensorDados INT PRIMARY KEY AUTO_INCREMENT,
   umidade DOUBLE NOT NULL,
   temperatura DOUBLE NOT NULL,
-  data_Hora DATETIME DEFAULT CURRENT_TIMESTAMP
+  data_Hora DATETIME DEFAULT CURRENT_TIMESTAMP,
+  fkSensor CHAR(7),
+  CONSTRAINT fkSensor FOREIGN KEY (fkSensor) REFERENCES tbSenor(idSensor)
 );
