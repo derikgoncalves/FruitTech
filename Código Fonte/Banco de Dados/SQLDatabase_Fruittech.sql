@@ -37,7 +37,7 @@ CREATE TABLE tbCaminhao (
   CONSTRAINT chkTipoCombustivel CHECK (tipoCombustivelCaminhao IN ('Diesel Comum', 'Diesel S-10', 'Diesel aditivado', 'Diesel premium', 'Gás Natural', 'Eletricidade', 'Outro'))
 );
 
-CREATE TABLE Produto (
+CREATE TABLE tbProduto (
   idProduto INT PRIMARY KEY AUTO_INCREMENT,
   tipoProduto VARCHAR(10) NOT NULL,
   nomeProduto VARCHAR(80) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE Produto (
   CONSTRAINT fkAgric FOREIGN KEY (fkAgricultor) REFERENCES tbAgricultor (idAgricultor)
 ) AUTO_INCREMENT = 10;
 
-CREATE TABLE Remessa (
+CREATE TABLE tbRemessa (
   idRemessa INT PRIMARY KEY AUTO_INCREMENT,
   quantidade INT NOT NULL,
   dataEnvio DATE NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE Remessa (
   CONSTRAINT fkCaminh FOREIGN KEY (fkCaminhao) REFERENCES tbCaminhao (placaCaminhao)
 ) AUTO_INCREMENT = 100;
 
-CREATE TABLE Sensor (
+CREATE TABLE tbSensor (
   idSensor INT PRIMARY KEY AUTO_INCREMENT,
   tipo VARCHAR(5) NOT NULL,
   statusMonitoramento VARCHAR(7) NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE Sensor (
   CONSTRAINT fkCaminh FOREIGN KEY (fkCaminhao) REFERENCES tbCaminhao (placaCaminhao)
 );
 
-CREATE TABLE sensorDados (
+CREATE TABLE tbSensorDados (
   id_sensorDados INT PRIMARY KEY AUTO_INCREMENT,
   umidade DOUBLE NOT NULL,
   temperatura DOUBLE NOT NULL,
