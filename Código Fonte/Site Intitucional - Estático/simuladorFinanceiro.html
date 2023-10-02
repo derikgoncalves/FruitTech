@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador FruitTech</title>
+    <link rel="stylesheet" href="css/styleSimulador.css" />
+  </head>
+
+  <body>
+    <div class="titulo">
+      <img src="assets/logo.jpg" class="img" />
+    </div>
+
+    <div class="escopo" id="input_div">
+      <div>
+        <h1>SIMULADOR</h1>
+        <h3>Utilize nossa calculadora para estimar suas perdas de mamão!</h3>
+
+        <span>Qual é a quantidade de toneladas vendidas ao ano?</span><br />
+        <input id="input_cargaTransportada" type="number" /><br /><br />
+
+        <span>Qual é o faturamento anual?</span><br />
+        <input id="input_faturamentoAnual" type="number" /><br /><br />
+
+        <span>Qual é a quantidade de caminhões desejados para a frota?</span>
+        <input type="number" id="input_frota" /><br /><br />
+
+        <span>Qual é a distancia estimada(km)?</span>
+        <input type="number" id="input_distancia" /><br /><br />
+      </div>
+      <button class="btn-simular" onclick="Calcular()">Simular</button>
+    </div>
+
+    <div id="div_calculo"></div>
+  </body>
+</html>
+
+<script>
+  function Calcular() {
+    //calculo perda carga
+
+    var cargaAnual = Number(input_cargaTransportada.value);
+    var perdaCargaTotal = cargaAnual * 0.2;
+
+    // calculo para frota
+    var frota = Number(input_frota.value);
+    var distancia = Number(input_distancia.value);
+    var valorSensor = 250;
+
+    //calculo perda faturamento
+
+    var faturamentoAnual = Number(input_faturamentoAnual.value);
+    var perdaFatTotal = faturamentoAnual * 0.2;
+
+    //calculo para valor restaurado
+
+    var perdaFatTransporte = perdaFatTotal * 0.85; // As perdas serão reduzidas em 17% (perda 20% -> 3% na regrinha de 3 fica 100% -> 85%)
+    var valorRestaurado = perdaFatTotal - perdaFatTransporte;
+
+    // Oculta o div anterior
+    document.getElementById("input_div").style.display = "none";
+
+    var valorFrota = frota * 6720; // frota * valor para chamar o serviço se tiver;
+    var valorFrete = distancia * frota * 3.56 + frota * 364.71; // distancia * valor do frete;
+    var precoSensores = valorSensor * frota * 2; // sensores para camara fria e para os caminhões
+
+    //calculo ROI
+
+    var retornoTotal = perdaFatTransporte * 2;
+    var investimentoProjeto = valorFrota + precoSensores + valorFrete; // ter frota propria / cobrar frete alto pois é refrigerado / rever valor inicial
+    var roi =
+      ((retornoTotal - investimentoProjeto) / investimentoProjeto) * 100;
+
+    //exibir mensagem
+
+    div_calculo.innerHTML = `
+        <div class="div_resultado">
+            <h2>RESULTADO</h2>
+        <b>Faturamento Anual:</b> R$ ${faturamentoAnual}<br>
+        <b>Carga anual transportada:</b> ${cargaAnual} t<br>
+        <b>Perda da carga total anual (20%):</b> ${perdaCargaTotal} t<br> 
+        <b>Perda financeira total anual (20%):</b> R$ ${perdaFatTotal}<br><br>
+        
+        <i>Iremos reduzir as suas perdas para <b>pelo menos 3% </b>, reduzindo <b>(R$${perdaFatTransporte})</b> dos <b>R$${perdaFatTotal}</b> perdidos no seu faturamento durante o transporte. Ou seja, depois da implementação do sistema, as suas perdas do transporte cairão para <b>R$${valorRestaurado}</b>.<br><br>
+        
+	O valor final do projeto está previsto em <b>R$ ${investimentoProjeto}.</b><br><br>
+
+        Com nossa solução, você verá um ROI de <b>${roi.toFixed(
+          2
+        )}%</b> em apenas <b>2 anos</b>!
+        Resultando em um ganho financeiro de <b>R$${retornoTotal}.</b><br><br>
+
+        Não perca esta oportunidade de maximizar seus lucros e transformar seu negócio.<br><br>
+
+        <button class="btn-simular">Contratar agora!</button>
+        </div>
+        `;
+  }
+</script>
