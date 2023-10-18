@@ -1,0 +1,99 @@
+ /*CSS Geral, página inteira /'universe select' ou seletor universal. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Sora-Medium, 'Segoe UI', Arial;
+    font-size: 12.5px; /* var(--tamanho-base-fonte);*/
+    color: #0E6616; /*var(--cor-destaque);*/
+    
+}
+
+body{ 
+    overflow-y: hidden;
+    height: 100%;
+
+  }  
+
+:root {
+    --cor-destaque: #0E6616;
+    --tamanho-base-fonte: 12.5px
+} 
+  
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.main__leftSection{
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/truck-left.jpg);
+    /* filter: brightness(0.75); */
+
+}
+
+.main__rightSection{
+    width: 50%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.724) 0px 0px 50px 20px;
+}
+
+.main__cardLogin{
+    padding: 10px 35px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.main__articleUpper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.main__descSignUp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+
+}
+
+.main__logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.main__DescTitle, .main__DescTitle span, .main__DescTitle b{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.main__DescTitle, .main__DescTitle span{
+    font-weight: 100;
+}
+
+.main__DescTitle span {
+    border-bottom: 1px solid var(--cor-destaque); /* Espessura e cor do sublinhado */
+    text-decoration: none;
+}
+
+.main__subDescTitle{
+    width: 65%;
+    font-size: 1.40em;
+    text-align: center;
+}
+
+
+.main__articleLower, .main__articleLower a{
+    font-size: 1.65rem;
+}
