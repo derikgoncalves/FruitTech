@@ -17,8 +17,6 @@ body{
 
 :root {
     --cor-destaque: #0E6616;
-    --bg-cor-input: #E0EBE1;
-    --placeholder-text-color: #77A87B;
     --tamanho-base-fonte: 12.5px
 } 
   
@@ -47,7 +45,7 @@ body{
 }
 
 .main__cardLogin{
-    padding: 10px 50px;
+    padding: 10px 35px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -59,7 +57,7 @@ body{
 .main__articleUpper{
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: 50px;
 }
 
 .main__descSignUp{
@@ -85,7 +83,7 @@ body{
 }
 
 .main__DescTitle span {
-    border-bottom: 1px solid var(--cor-destaque); 
+    border-bottom: 1px solid var(--cor-destaque); /* Espessura e cor do sublinhado */
     text-decoration: none;
 }
 
@@ -98,108 +96,4 @@ body{
 
 .main__articleLower, .main__articleLower a{
     font-size: 1.65rem;
-}
-
-.main__inputDates{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 10px;
-
-}
-
-.input--bases{
-    height: 50px;
-    /* width: 100px; */
-    border: none;
-    border-radius: 5px;
-    background-color: var(--bg-cor-input);
-    font-size: 1.5em;
-    padding-left: 10px;
-    
-}
-
-.input--bases::placeholder{
-    color: var(--placeholder-text-color);
-}
-
-.flex--bases{
-    width: 100%;
-    display: flex;
-    column-gap: 10px;
-}
-
-#input_nomeEmpresa{
-    flex-grow: 1;
-}
-
-#input_CNPJ{
-    flex-grow: 2;
-}
-
-#input_DtCriacao{
-    flex-grow: 1;
-}
-
-#input_logradouro{
-    flex-grow: 1;
-}
-
-#input_bairro{
-    flex-grow: 2;
-}
-
-#input_numero{
-    flex-grow: 1;
-}
-
-#input_cidade{
-    flex-grow: 1;
-}
-
-#input_estado{
-    flex-grow: 1;
-}
-
-#input_cep{
-    flex-grow: 1;
-}
-
-#input_complemento{
-    flex-grow: 3;
-}
-
-#input_tefoneFixo{
-    flex-grow: 1;
-}
-
-#input_email{
-    flex-grow: 1;
-}
-
-#input_senha{
-    flex-grow: 1;
-}
-
-#input_confirmaSenha{
-    flex-grow: 1;
-}
-
-.main__btn{
-    height: 80px;
-    /* width: 100px; */
-    border: none;
-    border-radius: 5px;
-    color: #ffffff;
-    background-color: var(--cor-destaque);
-    font-size: 1.5em;
-    font-weight: 600;
-    padding-left: 10px;
-    cursor: pointer;
-    transition: all 0.25s;
-}
-
-.main__btn:hover{
-    filter: brightness(0.75);
 }

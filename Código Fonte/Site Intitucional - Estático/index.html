@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/styleIndex.css" />
+  <link rel="stylesheet" href="./assets/css/styleIndex.css" />
   <title>FruitTech</title>
 </head>
 
@@ -13,15 +13,15 @@
     <div class="containerNavbar">
       <div class="caixaLogoNavbar">
         <div class="logoNavbar">
-          <img src="assets/img/logo.png">
+          <img src="./assets/img/logo.png">
         </div>
       </div>
       <div class="linksNavbar">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Como funciona</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobreNos">Sobre nós</a></li>
+          <li><a href="#comoFunciona">Como funciona</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
       <div class="botoesNavbar">
@@ -36,7 +36,7 @@
       </div>
     </div>
   </div>
-  <div class="imagemPrincipal">
+  <div id="home" class="imagemPrincipal">
     <div class="caixaTextoImagemPrincipal">
       <div class="textoImagemPrincipal">Monitoramento inteligente no<br>transporte de frutas!</div>
       <div class="subtextoImagemPrincipal">Monitoramento preciso de temperatura e umidade para<br>conservação &
@@ -53,25 +53,32 @@
           <li>
             <div class="quadradoBranco">
               <div class="caixaItemsQuadrados">
-                <div class="imagemQuadrado"><img src="assets/img/Garantia.jpg"></div>
-                <div class="textoQuadrados">Redução do - <span style="color: #0E6616;"><u>PDA</u></span><br> utilizando
-                  tecnologia.</div>
+                <div class="bordaQuadradoBranco">
+                  <div class="imagemQuadrado"><img src="./assets/img/reducao.jpg"></div>
+                </div>
+                <div class="textoQuadrados">Redução de - <u style="color: #0E6616;">Perdas<br> no transporte</u><br>
+                </div>
               </div>
           </li>
           <li>
             <div class="quadradoVerde">
               <div class="caixaItemsQuadrados">
-                <div class="imagemQuadrado"><img src="assets/img/Monitoramento.jpg"></div>
-                <div class="textoQuadrados"> <span style="color: white;">Monitoramento<br> em <u>tempo real.</u></span>
+                <div class="bordaQuadradoVerde">
+                  <div class="imagemQuadrado" style="padding: 8px; padding-right: 10px;"><img style="width: 100%"
+                      src="./assets/img/Qualidade2.JPG"></div>
+                </div>
+                <div class="textoQuadrados"> <span style="color: white;"><u>Qualidade & integridade</u> assegurada aos
+                    produtos.</span>
                 </div>
               </div>
           </li>
           <li>
             <div class="quadradoBranco">
               <div class="caixaItemsQuadrados">
-                <div class="imagemQuadrado"><img src="assets/img/Reducao.jpg"></div>
-                <div class="textoQuadrados"><span style="color: #0E6616;"><u>Garantia</u></span> de qualidade &<br>
-                  integridade aos produtos.</div>
+                <div class="bordaQuadradoBranco">
+                  <div class="imagemQuadrado" style="padding: 8px;"><img src="./assets/img/oportunidade.png"></div>
+                </div>
+                <div class="textoQuadrados">Oportunidade de <span ><br><u style="color: #0E6616;">negócio lucrativo</u></span></div>
               </div>
 
           </li>
@@ -86,8 +93,8 @@
 
   <div class="espacoBranco"></div>
   <div class="containerSobreNos">
-    <div style="display: flex; align-items: center;">
-      <img src="assets/aaaa/biruleibeA.png" alt="" style="margin: 0; float: left;">
+    <div id="sobreNos" style="display: flex; align-items: center;">
+      <img src="./assets/img/marcadorVerde.png" alt="" style="margin: 0; float: left;">
       <div style="font-family: 'Sora', 'sans-serif'; font-weight: 600; font-size: 1.75rem; margin-left: 0.5rem;">Sobre
         nós</div>
     </div><br><br>
@@ -96,28 +103,28 @@
       <div class="quadroSobre1">
         <div class="bordaSobre1">
           <div class="imagemSobre1">
-            <div class=""><img style="width: 100%;" src="assets/img/imagemSobreNos1.png" alt=""></div>
+            <div class=""><img style="width: 100%;" src="./assets/img/imagemSobreNos1.png" alt=""></div>
           </div>
         </div>
       </div>
       <div style="width: 50%;">
-        <div class="textoSobre1"><span style="font-size: 1.5rem; font-weight:900;">Luta contra o PDA na Cadeia
-            Produtiva</span><br><span style="font-size: 1.75rem; font-weight:900; color: #0E6616;">Perda e Desperdício
-            de Alimentos</span><br><span style="font-size: 1.25rem; font-weight:400;">Acontece desde
-            pequenos produtores e grandes fazendas até vendedores & consumidores. Perda é a redução da quantidade e
-            qualidade dos produtos antes da comercialização. Desperdício é o que ocorre na venda e
-            consumo.</span><br><br>
+        <div class="textoSobre1"><span class="fonte2TextoSobre"><u>FruitTech</u> contra o PDA</span><br><span
+            class="fonte3TextoSobre" style="color: #0E6616;">Perda e Desperdício
+            de Alimentos</span><br><span class="fonte1TextoSobre">Sabemos que a cadeia produtiva de alimentos enfrenta
+            desafios críticos de <u style="color: #0E6616">desperdício</u> & <u style="color: #0E6616">perdas</u>.
+            Principalmente devido a problemas no <u style="color: #0E6616">transporte</u> e manuseio de <u
+              style="color: #0E6616">produtos</u>, Os dados mostram essa situação.</span><br><br>
 
-          <span style="font-size: 1.5rem; font-weight:900;">PDA no Brasil</span><span
-            style="font-size: 1.5rem; font-weight:900; color: #0E6616;"><br>26,3 milhões de toneladas ao ano</span><br>
-          <span style="font-size: 1.25rem; font-weight:400;"><b>10%</b> do que é colhido se perde ainda no
+          <span class="fonte1TextoSobre">PDA no Brasil</span><span class="fonte2TextoSobre"
+            style="color: #0E6616;"><br>26,3 milhões de toneladas ao ano</span><br>
+          <span class="fonte1TextoSobre"><b>10%</b> do que é colhido se perde ainda no
             campo.</span><br>
-          <span style="font-size: 1.25rem; font-weight:400;"><b>50%</b> é desperdiçado no manuseio e
+          <span class="fonte1TextoSobre" style="color: #0E6616"><b>50%</b> é desperdiçado no manuseio e
             transporte.</span><br>
-          <span style="font-size: 1.25rem; font-weight:400;"><b>30%</b> perdido na comercialização e
-            abastecimento.</span><br><span style="font-size: 1.25rem; font-weight:400;"><b>10% é jogado fora nos
+          <span class="fonte1TextoSobre"><b>30%</b> perdido na comercialização e
+            abastecimento.</span><br><span class="fonte1TextoSobre"><b>10% é jogado fora nos
               supermercados, restaurantes e em nossas
-              próprias casas.</b> (Embrapa - 2018)</span>
+              próprias casas.</b> <u style="color: #0E6616">(Embrapa - 2018)</u></span>
         </div>
       </div>
     </div>
@@ -125,24 +132,27 @@
     <!-- QUADRO 2-->
     <div class="containerSobre2">
       <div style="width: 50%;">
-        <div class="textoSobre2"><span style="font-size: 1.5rem; font-weight:900;">Objetivos de Desenvolvimento
-            Sustentável</span><br><span style="font-size: 1.75rem; font-weight:900; color: #E9D208;">Consumo responsável
-            - ODS 12.3</span><br><span style="font-size: 1.25rem; font-weight:400;">Em 2015, a ONU lançou os 17
-            Objetivos de Desenvolvimento Sustentável (ODS) sendo que, um deles é meta 3 do objetivo 12 (Consumo
-            responsável) - “Até 2030 a redução à metade o desperdício mundial de alimentos em vendas do varejo, consumo
-            e reduzir as perdas na cadeia de produção…”</span><br><br>
+        <div class="textoSobre2"><span class="fonte2TextoSobre">Transporte dos perecíveis</span><br><span
+            class="fonte3TextoSobre" style="color: #C7B200;">As frutas climatéricas</span><br><span
+            class="fonte1TextoSobre">As <u style="color: #C7B200;">frutas</u> tendem a ser <u
+              style="color: #C7B200;">mais sensíveis</u style="color: #C7B200;"> do que outros alimentos. Muitas frutas
+            apodrecem muito mais rápido após a colheita, as chamadas <u style="color: #C7B200;">frutas climatéricas</u>.
+            Seu transporte é uma etapa crítica, que <u style="color: #C7B200;">sem</u> o <u
+              style="color: #C7B200;">controle</u> das condições <u style="color: #C7B200;">climáticas</u>, as leva a <u
+              style="color: #C7B200;">deterioração</u>.</span><br><br>
 
-          <span style="font-size: 1.5rem; font-weight:900;">Combatendo o PDA no Brasil</span><span
-            style="font-size: 1.75rem; font-weight:900; color: #E9D208;"><br>Ampla adoção de tecnologias</span><br>
-          <span style="font-size: 1.25rem; font-weight:400;">Para que o ODS12 seja alcançado é preciso uma
-            transformação, acesso a tecnologias para monitoramento da lavoura, colheita, armazenamento e principalmente
-            transporte de alimentos, IOT tem um peso importante aqui.</span><br>
+          <span class="fonte2TextoSobre"><u>FruitTech</u> é a solução</span><span class="fonte3TextoSobre"
+            style="color: #C7B200;"><br>Adotando tecnologias IOT</span><br>
+          <span class="fonte1TextoSobre">Pensando nisso, criamos a <u style="color: #C7B200;">FruitTech</u>, com
+            objetivo de disponibilizar acesso a <u style="color: #C7B200;">tecnologias</u> para <u
+              style="color: #C7B200;">monitoramento</u> no <u style="color: #C7B200;">transporte</u> dessas frutas, por
+            meio da <u style="color: #C7B200;">IOT</u> (Internet das Coisas).</span><br>
         </div>
       </div>
       <div class="quadroSobre2">
         <div class="bordaSobre2">
           <div class="imagemSobre2">
-            <div class=""><img style="width: 100%;" src="assets/img/imagemSobreNos2.PNG" alt=""></div>
+            <div class=""><img style="width: 100%;" src="./assets/img/imagemSobreNos2.png" alt=""></div>
           </div>
         </div>
       </div>
@@ -151,13 +161,13 @@
     <br><br>
     <!--Quadro sobre 3-->
     <div class="containerSobre3">
-      <div style="display: flex; align-items: center;">
-        <img src="assets/aaaa/biruleibeV.png" alt="" style="margin: 0; float: left;">
+      <div id="comoFunciona" style="display: flex; align-items: center;">
+        <img src="./assets/img/marcadorAmarelo.png" alt="" style="margin: 0; float: left;">
         <div style="font-family: 'Sora', 'sans-serif'; font-weight: 600; font-size: 1.75rem; margin-left: 0.5rem;">
           Projetos</div>
       </div><br><br>
       <div class="diagramaVisao">
-        <img src="assets/img/Grupo_8_-_Diagrama_de_Visao_de_Negocio.svg">
+        <img src="./assets/img/Grupo_8_-_Diagrama_de_Visao_de_Negocio.svg">
       </div>
     </div>
     <!--FIM QUADRO 3-->
@@ -166,13 +176,11 @@
   <div class="fundoFinal">
 
     <div class="containerFinal">
-      <div class="linha1Final">
+      <div id="contato" class="linha1Final">
         <div class="item1LinhaFinal">Entre em contato para se manter atualizado(a) conosco!</div>
         <div class="item2LinhaFinal">
-          <div style="  display: flex;
-          justify-content: space-evenly;
-          width: 100%;">
-            <input class="inputItem2Final" type="text">
+          <div style="  display: flex; justify-content: space-evenly; width: 100%; align-items: center;">
+            <input class="inputItem2Final" type="text" >
             <button class="botaoItem2Final"
               style="background-color: #0E6616; border: 1px solid #0E6616; border-radius: 5px; color: white;">Enviar</button>
           </div>
@@ -181,7 +189,7 @@
       <hr style="height: 1px; width: 100%;">
       <div class="linha2Final">
         <div class="item3LinhaFinal">
-          <img src="assets/img/logo.png" alt="">
+          <img src="./assets/img/logo.png" alt="">
           <div>Estamos impulsionando o crescimento do seu negócio!</div>
         </div>
         <div class="tabelaLinksFinal">
