@@ -11,10 +11,19 @@
 
 <body>
 
-    <div class="main">
-        <section class="main__leftSection">
-
-        </section>
+    <div class="main" id="main">
+        <div class="main__cardError" id="cardError">
+            
+            <div class="main__content">
+                <span class="main__mensageError" id="mensageError"></span>
+            </div>
+            <hr style="opacity: 0.40;">
+            <div class="main__footerCardError">
+                <button class="main__tryAgain" type='button' onclick='FechaErro()'>Tentar Novamente</button>
+            </div>
+        </div>
+        <div class="main__errorBg" id="errorBg" onclick="FechaErro()"></div>
+        <section class="main__leftSection"></section>
         <section class="main__rightSection">
             <div class="main__cardLogin">
                 <article class="main__articleUpper">
@@ -32,13 +41,15 @@
                                 placeholder="Nome Empresa...">
                         </div>
                         <div class="flex--bases">
-                            <input type="text" id="input_CNPJ" class="input--bases" placeholder="CNPJ...">
-                            <input type="text" id="input_DtCriacao" class="input--bases"
+                            <input type="text" id="input_CNPJ" class="input--bases" placeholder="CNPJ..."
+                                onblur="FormataCNPJ()" maxlength="14">
+                            <input type="date" id="input_dtCriacao" class="input--bases"
                                 placeholder="Data de Criação...">
                         </div>
                         <div class="flex--bases">
-                            <input type="text" id="input_logradouro" class="input--bases"
-                                placeholder="Rua / Avenida...">
+                            <input type="text" id="input_cep" class="input--bases" placeholder="CEP..."
+                                onblur="PuxaCEP(),FormataCEP()" maxlength="8">
+                            <input type="text" id="input_complemento" class="input--bases" placeholder="Complemento...">
                         </div>
                         <div class="flex--bases">
                             <input type="text" id="input_bairro" class="input--bases" placeholder="Bairro...">
@@ -49,17 +60,16 @@
                             <input type="text" id="input_estado" class="input--bases" placeholder="Estado...">
                         </div>
                         <div class="flex--bases">
-                            <input type="text" id="input_cep" class="input--bases" placeholder="CEP...">
-                            <input type="text" id="input_complemento" class="input--bases" placeholder="Complemento...">
+                            <input type="text" id="input_logradouro" class="input--bases"
+                                placeholder="Rua / Avenida...">
                         </div>
                         <div class="flex--bases">
-                            <input type="text" id="input_tefoneFixo" class="input--bases"
-                                placeholder="Telefone Fixo...">
-                            <input type="text" id="input_email" class="input--bases" placeholder="Email...">
+                            <input type="tel" id="input_tefoneFixo" class="input--bases" placeholder="Telefone Fixo...">
+                            <input type="email" id="input_email" class="input--bases" placeholder="Email...">
                         </div>
                         <div class="flex--bases">
-                            <input type="text" id="input_senha" class="input--bases" placeholder="Senha...">
-                            <input type="text" id="input_confirmaSenha" class="input--bases"
+                            <input type="password" id="input_senha" class="input--bases" placeholder="Senha...">
+                            <input type="password" id="input_confirmaSenha" class="input--bases"
                                 placeholder="Confirma Senha...">
                         </div>
                     </div>
@@ -71,13 +81,106 @@
             </div>
         </section>
         </main>
-
-
 </body>
 
 
 </html>
 <script>
 
+    function FormataCNPJ() {
+        var inputCNPJ = document.getElementById('input_CNPJ');
+        var CNPJ = inputCNPJ.value;
+        inputCNPJ.value = CNPJ.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+    }
+
+    function FormataCEP() {
+        var inputCEP = document.getElementById('input_cep')
+        var CEP = inputCEP.value
+        inputCEP.value = CEP.replace(/^(\d{5})(\d{3})/, "$1-$2")
+    }
+
+
+    function Cadastrar() {
+
+        var nome_empresa = (input_nomeEmpresa.value);
+        var cnpj = (input_CNPJ.value);
+        cnpj = cnpj.replace(/[^0-9]/g, ''); // Substitui todos os caracteres não numéricos por um espaço vazio
+        var data = (input_dtCriacao.value);
+        var logradouro = (input_logradouro.value);
+        var bairro = (input_bairro.value);
+        var numero = Number(input_numero.value);
+        var cidade = (input_cidade.value);
+        var estado = (input_estado.value);
+        var cep = (input_cep.value);
+        cep = cep.replace(/[^0-9]/g, '');// Substitui todos os caracteres não numéricos por um espaço vazio
+        var Complemento = (input_complemento.value);
+        var Telefone_fixo = (input_tefoneFixo.value);
+        Telefone_fixo = Telefone_fixo.replace(/[^0-9]/g, ''); // Substitui todos os caracteres não numéricos por um espaço vazio
+        var email = (input_email.value);
+        var senha = (input_senha.value);
+        var confirmar_senha = (input_confirmaSenha.value);
+
+        if (nome_empresa == '' || cnpj == '' || data == '' || logradouro == '' || logradouro == 'Nenhum logradouro no CEP fornecido...' || bairro == '' || bairro == 'Nenhum bairro no CEP fornecido...' || numero == 0 ||
+            cidade == '' || cidade == 'Nenhuma cidade no CEP fornecido...' || estado == '' || estado == 'Nenhum estado no CEP fornecido...' || cep == '' || Telefone_fixo == '' || email == '' || /[@]/.test(email) == false || senha == '') {
+
+            AbreErro('Campos vazios ou incorretos! Preencha-os corretamente.')
+
+        } else if (senha != confirmar_senha) {
+
+            AbreErro(`Senhas não coincidem! Preencha-as corretamente.`)
+
+        } else {
+
+            window.location = 'dashboard.html'
+
+        }
+
+
+    }
+
+    function PuxaCEP() {
+
+        var inputCEP = document.getElementById('input_cep');
+        // Use um setTimeout para aguardar um curto período após o usuário terminar de digitar
+        var cep = inputCEP.value;
+        cep = cep.replace(/-|\s/g, '');
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na requisição');
+                }
+                return response.json(); // Retorna o JSON da resposta
+            })
+            .then(data => {
+                // Aqui 'data' conterá o JSON retornado pela API
+                // Campos puxados da JSON com os dados do respectivo CEP
+
+                if (data.cep === undefined) {
+                    document.getElementById('input_logradouro').value = "Nenhum logradouro no CEP fornecido...";
+                    document.getElementById('input_bairro').value = "Nenhum bairro no CEP fornecido...";
+                    document.getElementById('input_cidade').value = "Nenhuma cidade no CEP fornecido...";
+                    document.getElementById('input_estado').value = "Nenhum estado no CEP fornecido...";
+                } else {
+                    document.getElementById('input_logradouro').value = data.logradouro;
+                    document.getElementById('input_bairro').value = data.bairro;
+                    document.getElementById('input_cidade').value = data.localidade;
+                    document.getElementById('input_estado').value = data.uf;
+                }
+
+            })
+            .catch(error => console.error('Erro:', error));
+    }
+
+    function AbreErro(mensagem) {
+        errorBg.style = 'display: block'
+        cardError.style = 'display: block'
+        mensageError.innerText = `${mensagem}`
+
+    }
+
+    function FechaErro() {
+        errorBg.style = 'display: none'
+        cardError.style = 'display: none'
+    }
 
 </script>

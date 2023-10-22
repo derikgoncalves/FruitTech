@@ -203,3 +203,69 @@ body{
 .main__btn:hover{
     filter: brightness(0.75);
 }
+
+.main__errorBg{
+    display: none;
+    position: absolute;
+    background-color: hsla(0, 0%, 0%, 0.335);
+    width: 100vw;
+    height: 100vh;
+}
+
+.main__cardError{
+    display: none;
+    z-index: 2; 
+    position: absolute; 
+    left: 50%;
+    width: 400px;
+    height: 180px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.main__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+
+}
+
+.main__mensageError{
+    text-align: center;
+    font-size: 2.0em;
+    font-weight: 200;
+    
+
+
+}
+
+.main__footerCardError{
+    width: 100%;
+    background-color: #77a87b63;
+    height: 70px;
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+.main__tryAgain{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #77A87B;
+    background-color: #ffffff;
+    padding: 1em 2em;
+    border: none;
+    border-radius: .6rem;
+    position: relative;
+    left: 120px;
+    top: 15px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+
+  
