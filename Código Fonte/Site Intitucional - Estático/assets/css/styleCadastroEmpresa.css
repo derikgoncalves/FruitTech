@@ -17,8 +17,6 @@ body{
 
 :root {
     --cor-destaque: #0E6616;
-    --bg-cor-input: #E0EBE1;
-    --placeholder-text-color: #77A87B;
     --tamanho-base-fonte: 12.5px
 } 
   
@@ -47,7 +45,7 @@ body{
 }
 
 .main__cardLogin{
-    padding: 10px 50px;
+    padding: 10px 35px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -59,7 +57,7 @@ body{
 .main__articleUpper{
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: 50px;
 }
 
 .main__descSignUp{
@@ -85,7 +83,7 @@ body{
 }
 
 .main__DescTitle span {
-    border-bottom: 1px solid var(--cor-destaque); 
+    border-bottom: 1px solid var(--cor-destaque); /* Espessura e cor do sublinhado */
     text-decoration: none;
 }
 
